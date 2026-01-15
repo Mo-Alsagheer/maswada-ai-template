@@ -1,6 +1,7 @@
 import { ArrowUpRight, Sparkles } from "lucide-react"
 
 import { GlassCard } from "@/components/common/GlassCard"
+import { Button } from "@/components/ui/button"
 
 const typography = [
   { label: "Display", className: "text-4xl md:text-5xl font-semibold" },
@@ -35,10 +36,10 @@ export function HomePage() {
           focus on content while staying future-ready for AI workflows.
         </p>
         <div className="mt-6 flex flex-wrap items-center gap-3">
-          <button className="glass-border inline-flex items-center gap-2 rounded-full bg-white/50 px-4 py-2 text-sm font-medium transition hover:bg-white/80">
+          <Button variant="outline" size="default" className="gap-2">
             Explore surfaces
             <ArrowUpRight className="h-4 w-4" />
-          </button>
+          </Button>
           <span className="text-xs text-muted-foreground">
             Minimal palette • Soft blur • Subtle elevation
           </span>
