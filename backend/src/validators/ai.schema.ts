@@ -3,7 +3,6 @@ import { z } from 'zod';
 export const summarizeSchema = z.object({
   noteId: z.string().uuid().optional(),
   text: z.string().min(1).optional(),
-  language: z.enum(['en', 'ar']).optional(),
 }).refine(
   (data) => data.noteId || data.text,
   { message: 'Either noteId or text must be provided' }
@@ -13,7 +12,6 @@ export const rewriteSchema = z.object({
   noteId: z.string().uuid().optional(),
   text: z.string().min(1).optional(),
   mode: z.enum(['shorter', 'clearer', 'formal', 'casual']),
-  language: z.enum(['en', 'ar']).optional(),
 }).refine(
   (data) => data.noteId || data.text,
   { message: 'Either noteId or text must be provided' }

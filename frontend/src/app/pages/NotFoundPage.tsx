@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
 
-import { GlassPanel } from "@/components/common/GlassPanel"
+import { GlassCard } from "@/components/common/GlassCard"
 
 export function NotFoundPage() {
   return (
-    <GlassPanel className="px-6 py-12 text-center sm:px-10">
+    <GlassCard className="px-6 py-12 text-center sm:px-10">
       <h1 className="text-2xl font-semibold text-zinc-900">
         This page drifted away
       </h1>
@@ -17,6 +17,6 @@ export function NotFoundPage() {
       >
         Back to home
       </Link>
-    </GlassPanel>
+    </GlassCard>
   )
 }
