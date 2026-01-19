@@ -307,11 +307,10 @@ Frontend will run on `http://localhost:5173`
   }
   ```
 
-- `POST /api/ai/translate` - Translate between EN/AR
+- `POST /api/ai/translate` - Auto-detect and translate (EN↔AR)
   ```json
   { 
-    "noteId": "uuid" | "text": "content",
-    "target": "en" | "ar"
+    "noteId": "uuid" | "text": "content"
   }
   ```
 

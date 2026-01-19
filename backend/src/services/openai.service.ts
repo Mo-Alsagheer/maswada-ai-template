@@ -66,15 +66,16 @@ class OpenAiService {
     return response.choices[0]?.message?.content || 'Failed to rewrite text';
   }
 
-  async translate(text: string, target: 'en' | 'ar'): Promise<string> {
-    const targetLanguage = target === 'ar' ? 'Arabic' : 'English';
-
+  async translate(text: string): Promise<string> {
     const response = await this.client.chat.completions.create({
       model: this.model,
       messages: [
         {
           role: 'system',
-          content: `You are a professional translator. Detect the language of the input text and translate it to ${targetLanguage}. Maintain the original meaning, tone, and style. Only provide the translation, no explanations.`,
+          content: `You are a professional translator. Detect the language of the input text:
+- If the text is in English, translate it to Arabic.
+- If the text is in Arabic, translate it to English.
+Maintain the original meaning, tone, and style. Only provide the translation, no explanations.`,
         },
         {
           role: 'user',

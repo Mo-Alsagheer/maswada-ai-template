@@ -50,7 +50,8 @@ export class AiService {
       throw new Error('No text to translate');
     }
 
-    const result = await openAiService.translate(text, input.target);
+    // Auto-detects language and translates to the opposite (EN↔AR)
+    const result = await openAiService.translate(text);
     return { result };
   }
 }
