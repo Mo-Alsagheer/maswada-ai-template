@@ -50,8 +50,7 @@ You should see: `🤖 OpenAI: Configured ✓`
 - **Model**: gpt-5-mini
 - **Max Tokens**: 1000
 - **Modes**:
-  - `shorter` - Make it more concise
-  - `clearer` - Improve clarity
+  - `comedy` - Humorous and entertaining tone
   - `formal` - Professional tone
   - `casual` - Conversational tone
 - **Language**: Auto-detects from input (English & Arabic)
@@ -88,7 +87,7 @@ Response stays in the same language as input.
 ```json
 {
   "text": "Your text to rewrite...",
-  "mode": "clearer"  // shorter | clearer | formal | casual
+  "mode": "comedy"  // comedy | formal | casual
 }
 ```
 

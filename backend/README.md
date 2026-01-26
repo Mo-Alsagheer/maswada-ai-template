@@ -114,7 +114,7 @@ The backend uses OpenAI's **GPT-5-mini** model directly for all AI features.
 
 **Features:**
 - **Summarize**: Concise summaries in EN or AR
-- **Rewrite**: Multiple modes (shorter, clearer, formal, casual)
+- **Rewrite**: Multiple modes (comedy, formal, casual)
 - **Translate**: High-quality EN ↔ AR translation powered by GPT-5
 - **Model**: Uses gpt-5-mini for optimal performance and cost
 

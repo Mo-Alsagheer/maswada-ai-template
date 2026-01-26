@@ -211,11 +211,11 @@ Content-Type: application/json
 
 {
   "text": "Text to rewrite...",
-  "mode": "clearer"
+  "mode": "comedy"
 }
 ```
 
-**Modes:** `shorter`, `clearer`, `formal`, `casual`
+**Modes:** `comedy`, `formal`, `casual`
 
 **Expected Response:**
 ```json

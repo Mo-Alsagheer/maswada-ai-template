@@ -39,11 +39,10 @@ class OpenAiService {
 
   async rewrite(
     text: string,
-    mode: 'shorter' | 'clearer' | 'formal' | 'casual'
+    mode: 'comedy' | 'formal' | 'casual'
   ): Promise<string> {
     const modeInstructions = {
-      shorter: 'Make it more concise and brief while keeping all the main points.',
-      clearer: 'Make it clearer and easier to understand, improving readability.',
+      comedy: 'Rewrite it in a humorous, witty, and entertaining tone. Add comedic elements while keeping the main message.',
       formal: 'Rewrite it in a formal, professional tone.',
       casual: 'Rewrite it in a casual, conversational tone.',
     };
