@@ -25,10 +25,10 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.17",
+    "@types/cors": "^2.8.19",
     "@types/express": "^4.17.21",
-    "@types/node": "^22.10.5",
+    "@types/node": "^22.19.13",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.9.3"
   }
 }
