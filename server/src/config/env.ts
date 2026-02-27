@@ -6,7 +6,9 @@ dotenv.config();
 export const config = {
   port: parseInt(process.env.PORT || "3001", 10),
   nodeEnv: process.env.NODE_ENV || "development",
-  frontendOrigin: process.env.FRONTEND_ORIGIN || "http://localhost:5173",
+  frontendOrigin: (
+    process.env.FRONTEND_ORIGIN || "http://localhost:5173"
+  ).replace(/\/$/, ""),
   clerk: {
     publishableKey: process.env.CLERK_PUBLISHABLE_KEY || "",
     secretKey: process.env.CLERK_SECRET_KEY || "",
