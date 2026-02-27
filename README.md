@@ -1,24 +1,25 @@
-# React 19 Full-Stack Template | قالب تطبيق متكامل
+# Maswada AI | مسودة AI
 
-**A learning template for building production-ready applications**
+**A full-stack, AI-powered bilingual note-taking application**
 
-This is the starter template for the Udemy course: **Learn React.js 19 with Cursor**
+Maswada AI is a complete, production-ready application that helps you create, manage, and enhance your notes using Artificial Intelligence.
 
-## About This Template
+## About Maswada AI
 
-This template provides a clean, lean structure to help you learn how to build a modern, production-ready full-stack application from the ground up. Throughout the course, we'll build an AI-powered note-taking application with bilingual support (English/Arabic), authentication, and AI features.
+This application provides a robust backend API and a modern frontend interface, featuring bilingual support (English/Arabic), secure authentication, and powerful AI features to summarize, translate, and rewrite your notes.
 
-The structure is intentionally simple and focused on learning best practices for:
+The technology stack uses modern best practices, including:
+
 - Modern React 19 development
-- Full-stack TypeScript architecture  
+- Full-stack TypeScript architecture
 - Authentication and security
 - AI integration
 - Internationalization and accessibility
 - Production deployment strategies
 
-### What You'll Learn to Build
+### Key Features
 
-Throughout the course, you'll implement these production-ready features:
+The application includes the following production-ready features:
 
 - 🔐 **Secure Authentication** - Learn Clerk-based authentication patterns
 - 📝 **Notes Management** - Master full CRUD operations with TypeScript
@@ -36,6 +37,7 @@ Throughout the course, you'll implement these production-ready features:
 ## Tech Stack
 
 ### Backend
+
 - **Runtime**: Node.js + TypeScript
 - **Framework**: Express.js
 - **Database**: SQLite with Sequelize ORM
@@ -44,6 +46,7 @@ Throughout the course, you'll implement these production-ready features:
 - **AI**: OpenAI GPT-5-mini
 
 ### Frontend
+
 - **Framework**: React 19 + TypeScript
 - **Build Tool**: Vite
 - **Routing**: React Router v7
@@ -55,7 +58,7 @@ Throughout the course, you'll implement these production-ready features:
 
 ```
 maswada-ai/
-├── backend/           # Express.js API server
+├── server/            # Express.js API server
 │   ├── src/
 │   │   ├── config/    # Environment configuration
 │   │   ├── db/        # Database setup and sync
@@ -68,7 +71,7 @@ maswada-ai/
 │   │   └── server.ts  # Server entry point
 │   └── package.json
 │
-├── frontend/          # React application
+├── client/            # React application
 │   ├── src/
 │   │   ├── app/       # Application core
 │   │   │   ├── App.tsx      # Main app component with routing
@@ -100,23 +103,27 @@ Before starting the course, ensure you have:
 
 ### Backend Setup
 
-1. Navigate to backend directory:
+1. Navigate to server directory:
+
    ```bash
-   cd backend
+   cd server
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Configure environment:
+
    ```bash
    cp .env.example .env
    # Edit .env and add your CLERK_SECRET_KEY
    ```
 
 4. Initialize database:
+
    ```bash
    npm run db:sync
    ```
@@ -130,17 +137,20 @@ Backend will run on `http://localhost:3001`
 
 ### Frontend Setup
 
-1. Navigate to frontend directory:
+1. Navigate to client directory:
+
    ```bash
-   cd frontend
+   cd client
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Configure environment:
+
    ```bash
    cp .env.example .env
    # Edit .env and add your VITE_CLERK_PUBLISHABLE_KEY
@@ -154,6 +164,7 @@ Backend will run on `http://localhost:3001`
 Frontend will run on `http://localhost:5173`
 
 ### ✅ Phase A: Backend Foundation
+
 **Status**: COMPLETED ✓
 
 - [x] Express.js setup with TypeScript
@@ -164,11 +175,12 @@ Frontend will run on `http://localhost:5173`
 - [x] CORS configuration
 - [x] Database sync script ready
 
-**Files**: `backend/src/{app.ts, server.ts, config/, db/, middlewares/errorHandler.ts}`
+**Files**: `server/src/{app.ts, server.ts, config/, db/, middlewares/errorHandler.ts}`
 
 ---
 
 ### ✅ Phase B: Authentication Middleware
+
 **Status**: COMPLETED ✓
 
 - [x] Clerk SDK installed
@@ -179,13 +191,14 @@ Frontend will run on `http://localhost:5173`
 - [x] Handle auth errors (401/403, expired tokens)
 - [x] Test endpoint (`GET /api/auth/me`)
 
-**Files**: `backend/src/middlewares/auth.ts`, `backend/src/routes/auth-test.ts`
+**Files**: `server/src/middlewares/auth.ts`, `server/src/routes/auth-test.ts`
 
 **Completed**: Real JWT verification using `clerkClient.verifyToken()`. All protected routes now require valid Clerk authentication.
 
 ---
 
 ### ✅ Phase C: Notes CRUD + Validation
+
 **Status**: COMPLETED ✓ (Ready for Testing with Frontend)
 
 - [x] Zod validation schemas
@@ -194,13 +207,14 @@ Frontend will run on `http://localhost:5173`
 - [x] userId scoping implemented in service layer
 - [x] All endpoints protected by auth middleware
 
-**Files**: `backend/src/{routes/notes.ts, services/notes.service.ts, validators/notes.schema.ts}`
+**Files**: `server/src/{routes/notes.ts, services/notes.service.ts, validators/notes.schema.ts}`
 
-**Testing Guide**: See `backend/TESTING.md` for API testing instructions.
+**Testing Guide**: See `server/TESTING.md` for API testing instructions.
 
 ---
 
 ### ✅ Phase D: AI Endpoints + OpenAI Integration
+
 **Status**: COMPLETED ✓
 
 - [x] OpenAI service with GPT-5-mini
@@ -209,13 +223,14 @@ Frontend will run on `http://localhost:5173`
 - [x] Zod validation for AI requests
 - [x] Direct OpenAI SDK integration (no abstraction needed)
 
-**Files**: `backend/src/{routes/ai.ts, services/ai.service.ts, services/openai.service.ts, validators/ai.schema.ts}`
+**Files**: `server/src/{routes/ai.ts, services/ai.service.ts, services/openai.service.ts, validators/ai.schema.ts}`
 
 **Completed**: Using GPT-5-mini for all AI features. Ready to test once auth is implemented.
 
 ---
 
 ### ✅ Phase E: Frontend Routing + Clerk Integration
+
 **Status**: COMPLETED ✓
 
 - [x] Vite + React setup
@@ -226,11 +241,12 @@ Frontend will run on `http://localhost:5173`
 - [x] Layout components with navigation
 - [x] Sign-in/sign-out buttons
 
-**Files**: `frontend/src/{App.tsx, components/layouts/, components/auth/}`
+**Files**: `client/src/{App.tsx, components/layouts/, components/auth/}`
 
 ---
 
 ### ✅ Phase F: Notes UI + API Integration
+
 **Status**: COMPLETED ✓
 
 - [x] API client with Clerk token integration
@@ -240,11 +256,12 @@ Frontend will run on `http://localhost:5173`
 - [x] AI features integration (summarize, translate)
 - [x] Loading and error states throughout
 
-**Files**: `frontend/src/{lib/api-client.ts, hooks/useApiClient.ts, pages/}`
+**Files**: `client/src/{lib/api-client.ts, hooks/useApiClient.ts, pages/}`
 
 ---
 
 ### ✅ Phase G: Internationalization (i18n) + RTL
+
 **Status**: COMPLETED ✓
 
 - [x] LocaleContext setup
@@ -256,11 +273,12 @@ Frontend will run on `http://localhost:5173`
 - [x] All pages translated (Home, Notes, Create, Detail)
 - [x] FormattedMessage components throughout
 
-**Files**: `frontend/src/{contexts/LocaleContext.tsx, i18n/messages.ts, components/LanguageSwitcher.tsx}`
+**Files**: `client/src/{contexts/LocaleContext.tsx, i18n/messages.ts, components/LanguageSwitcher.tsx}`
 
 ---
 
 ### ✅ Phase H: AI Features UI + Polish
+
 **Status**: COMPLETED ✓
 
 - [x] AI feature buttons in note detail page
@@ -274,7 +292,7 @@ Frontend will run on `http://localhost:5173`
 - [x] Dropdown menu for rewrite modes
 - [x] Fully translated UI
 
-**Files**: `frontend/src/pages/NoteDetailPage.tsx`
+**Files**: `client/src/pages/NoteDetailPage.tsx`
 
 ---
 
@@ -287,6 +305,7 @@ Frontend will run on `http://localhost:5173`
 ### Protected Endpoints (require Bearer token)
 
 #### Notes
+
 - `GET /api/notes` - List all notes for user
 - `POST /api/notes` - Create new note
 - `GET /api/notes/:id` - Get single note
@@ -294,14 +313,17 @@ Frontend will run on `http://localhost:5173`
 - `DELETE /api/notes/:id` - Delete note
 
 #### AI Features
+
 - `POST /api/ai/summarize` - Summarize text or note
+
   ```json
   { "noteId": "uuid" | "text": "content" }
   ```
 
 - `POST /api/ai/rewrite` - Rewrite text in different style
+
   ```json
-  { 
+  {
     "noteId": "uuid" | "text": "content",
     "mode": "shorter" | "clearer" | "formal" | "casual"
   }
@@ -309,7 +331,7 @@ Frontend will run on `http://localhost:5173`
 
 - `POST /api/ai/translate` - Auto-detect and translate (EN↔AR)
   ```json
-  { 
+  {
     "noteId": "uuid" | "text": "content"
   }
   ```
@@ -317,13 +339,14 @@ Frontend will run on `http://localhost:5173`
 ## Data Model
 
 ### Note
+
 ```typescript
 {
-  id: string;           // UUID
-  userId: string;       // Clerk user ID
+  id: string; // UUID
+  userId: string; // Clerk user ID
   title: string;
   content: string;
-  language: 'en' | 'ar';
+  language: "en" | "ar";
   summary: string | null;
   createdAt: Date;
   updatedAt: Date;
@@ -333,6 +356,7 @@ Frontend will run on `http://localhost:5173`
 ## Development Guidelines
 
 ### Backend
+
 - All routes must verify Clerk tokens
 - All database queries must filter by `userId`
 - Use Zod for request validation
@@ -340,6 +364,7 @@ Frontend will run on `http://localhost:5173`
 - Keep business logic in service layer
 
 ### Frontend
+
 - Use TypeScript strictly
 - All API calls through `apiClient`
 - Protected routes require authentication
@@ -350,6 +375,7 @@ Frontend will run on `http://localhost:5173`
 ## Environment Variables
 
 ### Backend (.env)
+
 ```
 PORT=3001
 NODE_ENV=development
@@ -362,6 +388,7 @@ OPENAI_ORGANIZATION_ID=org-...  # Optional
 ```
 
 ### Frontend (.env)
+
 ```
 VITE_CLERK_PUBLISHABLE_KEY=pk_test_...
 VITE_API_BASE_URL=http://localhost:3001
@@ -370,21 +397,24 @@ VITE_API_BASE_URL=http://localhost:3001
 ## Production Deployment
 
 ### Backend
+
 1. Build TypeScript: `npm run build`
 2. Set production environment variables
 3. Run database sync: `npm run db:sync`
 4. Start server: `npm start`
 
 ### Frontend
+
 1. Build for production: `npm run build`
 2. Serve `dist/` directory with static file server
 3. Ensure environment variables are set at build time
 
-## Learning Approach
+## Development Roadmap
 
-This template includes a phased implementation plan (Phases A-H) that guides you through building the application step by step. Each phase builds upon the previous one, teaching you how to architect and implement a real-world application.
+The application was built following a phased implementation plan (Phases A-H) that ensures a robust and scalable architecture.
 
-**What You'll Build:**
+**Core Application Capabilities:**
+
 - Full-stack note-taking application with AI features
 - Secure authentication system
 - RESTful API with Express.js
@@ -400,6 +430,4 @@ MIT
 
 **Getting Started:**
 
-Follow along with the Udemy course **Learn React.js 19 with Cursor** to build this application from scratch. The template provides the foundation - you'll implement the features through guided lessons.
-
-**Course Repository:** Use this template to start your own project and follow the implementation phases outlined above.
+Follow the Quick Start setup instructions above to run the Maswada AI backend and frontend locally. You can use this repository as a starting point for your own AI-powered applications.
